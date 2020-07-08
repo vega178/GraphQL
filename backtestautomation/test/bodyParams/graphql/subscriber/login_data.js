@@ -1,10 +1,16 @@
-
+let credentialsUser = require("../../../../data/customerCredentials").credentials.dev;
 module.exports = exports = {
-  params: { 
+  params: {
     login_params: function() {
+      let email = credentialsUser.email;
+      let password = credentialsUser.password;
+      let query = `mutation ($email: String!, $password: String!) 
+        { login( input: { email: $email, password: $password } ) 
+        { token }  
+      }`;
       return JSON.stringify({
-        query: "mutation {\n login(\n  input: {\n  email: \"vega-004@gmail.com\",\n  password: \"2588721ab\"\n } \n ) {\n  token\n  }\n} ",
-        variables: {}      
+        query: query,
+        variables: { email, password },     
       })  
     }
   }     
