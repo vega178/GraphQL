@@ -1,2 +1,2 @@
 # GraphQL
-Try Graphql data query and manipulation APIs
+Graphql service development and build some test automation scripts. 
