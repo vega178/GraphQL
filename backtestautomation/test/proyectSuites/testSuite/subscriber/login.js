@@ -5,7 +5,7 @@ const subscriberBodyParameters = require('../../../bodyParams/graphql/subscriber
 
 describe('Graphql @subscriber Scenarios @graphFuncSuite\n', () => {
   it('@gql001 @subscriber_login @dev', (done) => {
-    serviceSubscriber.login(subscriberBodyParameters.login_params())
+    serviceSubscriber.graphql_request(subscriberBodyParameters.login_params())
     .end((error, response) => {
       expect(error).to.be.null;
       expect(response.status === 200).to.equal(true);
